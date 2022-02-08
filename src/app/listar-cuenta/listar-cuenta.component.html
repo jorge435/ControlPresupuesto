@@ -1,0 +1,43 @@
+<h3>Listado de Cuenta</h3>
+
+<a class="btn btn-primary" href="registrar-cuenta" >Agregar Cuenta</a>
+<br><br>
+
+<div class="container py-5" style="border-top: 1px solid blue;">
+    <table class="table ">
+      <thead class="table-dark"> 
+          <tr class="text-center">
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">PresupuestoB</th>
+            <th scope="col">Reales</th>
+            <th scope="col">Diferencia</th>
+            <th scope="col">Contable</th>
+            <th scope="col">Tiempo</th>
+            <th scope="col">Eficiencias</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let c of cuentas" style="border-bottom:1px solid black;">
+            <td>{{c.idcuenta}}</td>
+            <td>{{c.nombre}}</td>
+            <td>{{c.presupuestoB}}</td>
+            <td>{{c.reales}}</td>
+            <td>{{c.diferencia}}</td>
+            <td>{{c.contable}}</td>
+            <td>{{c.tiempo}}</td>
+            <td>{{c.eficiencias}}</td>
+            <td>{{c.fecha}}</td>
+            <td>{{c.categoria}}</td>
+            <td>
+              <button (click)= "actualizarCuenta(c.idcuenta)" class="btn btn-warning"><i class="far fa-edit"></i>Actualizar</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    
+</div>

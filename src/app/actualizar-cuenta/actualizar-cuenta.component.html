@@ -1,0 +1,73 @@
+
+<div class="col-md-6 offset-md-3">
+    <h4 class="text-center">Modificar Cuenta</h4>
+
+    <form (ngSubmit)= "onSubmit()" >
+        <div class="form-group">
+            <label>Código de Cuenta:</label>
+            <input type="text" class="form-control"
+            id="idcuenta"
+            [(ngModel)] = "cuentas.idcuenta"
+            name="idcuenta"
+            #idcuenta = "ngModel">
+            <br><br>
+        </div>
+        <div class="form-group">
+            <label>Nombre de la Cuenta:</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)] = "cuentas.nombre" name="nombre" #nombre = "ngModel">
+            <br><br>
+        </div>
+
+        <div class="form-group">
+            <label>Presupuesto Bruto:</label> <br>
+            <input type="text" class="col-sm-5" id="presupuestob" [(ngModel)] = "cuentas.presupuestoB" name="presupuestob" style="border: 1px solid #54a0ff;">
+        </div>
+
+        <div class="form-group" style=" position: relative;top: -54px; left: 300px;">
+            <label>Real:</label> <br>
+            <input type="text" class="col-sm-5" id="reales" [(ngModel)] = "cuentas.reales" name="reales" style="border: 1px solid #54a0ff;">
+        </div>
+
+        <div class="form-group">
+            <label>Diferencia:</label><br>
+            <input type="text" class="col-sm-5" id="diferencia" [(ngModel)] = "cuentas.diferencia" name="diferencia" style="border: 1px solid #54a0ff;">
+        </div>
+
+        <div class="form-group" style=" position: relative;top: -54px; left: 300px;">
+            <label>Contable:</label><br>
+            <input type="text" class="col-sm-5" id="contable" [(ngModel)] = "cuentas.contable" name="contable" style="border: 1px solid #54a0ff;">
+        </div>
+
+        <div class="form-group">
+            <label>Tiempo:</label><br>
+            <input type="text" class="col-sm-5" id="tiempo" [(ngModel)] = "cuentas.tiempo" name="tiempo" style="border: 1px solid #54a0ff;">
+        </div>
+
+        <div class="form-group" style=" position: relative;top: -54px; left: 300px;">
+            <label>Eficiencias:</label><br>
+            <input type="text" class="col-sm-5" id="eficiencias" [(ngModel)] = "cuentas.eficiencias" name="eficiencias" style="border: 1px solid #54a0ff;">
+        </div>
+
+        <div class="form-group">
+            <label>Categoria:</label>
+                <select class="form-select" [(ngModel)] = "cuentas.categoria.idcategoria"  name="categoria" >                
+                <option [value]="c.idcategoria" *ngFor="let c of categorias">{{c.nombre}}</option>
+            </select>   
+            <br><br>        
+        </div>
+
+        <div class="form-group">
+            <label>Mes:</label>
+                <select class="form-select" [(ngModel)] = "cuentas.fecha.idfecha"  name="fecha" >                
+                <option [value]="c.idfecha" *ngFor="let c of fechas">{{c.mes}}</option>
+            </select>   
+            <br><br>        
+        </div>
+        <div class="form-group">
+            <button class="form-control btn btn-warning" style="border: 1px solid black;">Registrar Cuenta</button>
+        </div>
+        <br>
+        <br>
+    </form>
+</div>
+

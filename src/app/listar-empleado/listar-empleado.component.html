@@ -1,0 +1,39 @@
+<h3>Listado de Empleados</h3>
+
+<a class="btn btn-warning" href="registrar-empleado" style="border: 1px solid black;">Agregar Empleado</a>
+<br><br>
+
+<div class="container py-5" style="border-top: 1px solid blue;">
+
+    <table class="table ">
+        <thead class="table-dark"> 
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Dni</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Cuenta</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados" >
+            <td>{{ empleado.idempleado}}</td>
+            <td>{{ empleado.nombre}}</td>
+            <td>{{ empleado.apellido }}</td>
+            <td>{{ empleado.dni }}</td>
+            <td>{{ empleado.celular }}</td>
+            <td>{{ empleado.correo }}</td>
+            <td>{{ empleado.cuenta }}</td>
+            <td style="width: 150px; ">
+              <button (click)= "editarEmpleado(empleado.idempleado)" class="btn btn-warning" href="" style="margin: 2px; border: 1px solid black;"><i class="far fa-edit"></i></button>
+              <button (click)= "eliminarEmpleado(empleado.idempleado)" style="border: 1px solid black;" class="btn btn-warning" href="" ><i class="fas fa-trash"></i></button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    
+</div>
